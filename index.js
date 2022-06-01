@@ -1,17 +1,13 @@
 const express = require("express");
 const server = express();
-server.listen(3001);
+server.listen(3000);
 const mysql = require('mysql');
+const db_functions = require("./db_functions");
 
-const db = mysql.createPool({
-    host:  'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'db_planets'
-});
+const con = db_functions.createSqlConnection()
+db_functions.createTable(con)
 
 server.get('/', (req,res) => {
     res.send('Hello World jo');
-    return res.json( { message: "Hello world"  } );
 });
 
