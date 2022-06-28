@@ -2,6 +2,6 @@ module.exports = {
     HOST: "localhost",
     USER: "root",
     PASSWORD: "123456",
-    DB: "db.planets",
+    DB: "db_planets",
     dialect: "mysql",
   };
