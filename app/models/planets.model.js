@@ -1,13 +1,13 @@
 module.exports = (sequelize, Sequelize) => {
   const Planet = sequelize.define("planet", {
     name: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING = ""
     },
     climate: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING = ""
     },
     terrain: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING = ""
     }
   });
 

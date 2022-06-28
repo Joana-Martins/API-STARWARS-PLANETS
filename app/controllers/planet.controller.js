@@ -4,8 +4,8 @@ const Op = db.Sequelize.Op;
 
 // Create and Save a new Planet
 exports.create = (req, res) => {
-  // Validate request
-  if (!req.body.title) {
+   // Validate request
+  if (!req.body.name) {
     res.status(400).send({
       message: "Content can not be empty."
     });
@@ -16,7 +16,7 @@ exports.create = (req, res) => {
   const planet = {
     name: req.body.name,
     climate: req.body.climate,
-    terrain: req.body.terrain
+    terrain: req.body.terrain ? req.body.terrain : false
   };
 
   // Save Planet in the database
